@@ -1,0 +1,8 @@
+1363163
+
+root
+ |-- _c0: string (nullable = true) [business_id]
+ |-- _c1: string (nullable = true) [compliment_count]
+ |-- _c2: string (nullable = true) [date]
+ |-- _c3: string (nullable = true) [text]
+ |-- _c4: string (nullable = true) [user_id]

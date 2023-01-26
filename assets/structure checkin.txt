@@ -1,0 +1,5 @@
+175187
+
+root
+ |-- business_id: string (nullable = true)
+ |-- date: string (nullable = true)
