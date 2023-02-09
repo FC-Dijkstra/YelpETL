@@ -6,7 +6,6 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="YelpETL:jar" />
-      <artifact name="YelpETL:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -14,14 +13,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3b26bcb-de5e-42a1-ac8c-79c7851ecaa1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/structure business.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/structure checkin.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/structure tip.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/YelpETL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/YelpETL.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/YelpETL_jar/YelpETL.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/YelpETL_jar/YelpETL.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Test.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Test.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +70,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Spark Submit.Spark">
+  <component name="RunManager" selected="Spark Submit.Spark SSH">
     <configuration name="sbt compile" type="SbtRunConfiguration" factoryName="sbt Task" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
@@ -90,6 +83,95 @@
       <option name="workingDir" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Spark SSH" type="SparkSubmitConfigurationType" factoryName="SshSparkJobConfigurationType" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="archives">
+        <list />
+      </option>
+      <option name="artifactArgs" value="" />
+      <option name="artifactPath">
+        <FilePath>
+          <option name="path" value="YelpETL:jar" />
+          <option name="type" value="ARTIFACT" />
+        </FilePath>
+      </option>
+      <option name="beforeShellScript" value="" />
+      <option name="className" value="" />
+      <option name="clusterManager" value="LOCAL" />
+      <option name="conf" value="" />
+      <option name="deployMode" value="CLIENT" />
+      <option name="driverClassPath">
+        <list />
+      </option>
+      <option name="driverCores" value="" />
+      <option name="driverJavaOptions" value="" />
+      <option name="driverLibraryPath">
+        <list />
+      </option>
+      <option name="driverMemory" value="" />
+      <option name="envParams" value="" />
+      <option name="excludePackages" value="" />
+      <option name="executorCores" value="" />
+      <option name="executorMemory" value="" />
+      <option name="files">
+        <list />
+      </option>
+      <option name="interactive" value="false" />
+      <option name="jars">
+        <list />
+      </option>
+      <option name="keytab">
+        <FilePath>
+          <option name="path" value="" />
+          <option name="type" value="CUSTOM" />
+        </FilePath>
+      </option>
+      <option name="master" value="local" />
+      <option name="numExecutors" value="" />
+      <option name="packages" value="" />
+      <option name="principal" value="" />
+      <option name="projectPathOnTarget" />
+      <option name="propertiesFile">
+        <FilePath>
+          <option name="path" value="" />
+          <option name="type" value="CUSTOM" />
+        </FilePath>
+      </option>
+      <option name="proxyUser" value="" />
+      <option name="pyFiles">
+        <list />
+      </option>
+      <option name="queue" value="" />
+      <option name="repositories" value="" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="shellExecutor" value="/bin/bash" />
+      <option name="sparkHome" value="/opt/spark" />
+      <option name="sparkMonitoringDriverId" value="" />
+      <option name="sshConfigId" value="b6dd3862-4108-4817-8ab8-9298be9b4e79" />
+      <option name="supervise" value="false" />
+      <option name="targetDirectory">
+        <FilePath>
+          <option name="path" value="" />
+          <option name="type" value="SERVER" />
+        </FilePath>
+      </option>
+      <option name="totalExecutorCores" value="" />
+      <option name="verbose" value="false" />
+      <option name="workDirectoryPath">
+        <FilePath>
+          <option name="path" value="" />
+          <option name="type" value="SERVER" />
+        </FilePath>
+      </option>
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="YelpETL:jar" />
+        </option>
+        <option name="SftpSparkFileUpload" enabled="true" />
       </method>
     </configuration>
     <configuration name="Spark" type="SparkSubmitConfigurationType" factoryName="SparkJobConfigurationType" show_console_on_std_err="false" show_console_on_std_out="false">
@@ -178,6 +260,7 @@
     <list>
       <item itemvalue="sbt Task.sbt compile" />
       <item itemvalue="Spark Submit.Spark" />
+      <item itemvalue="Spark Submit.Spark SSH" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -199,6 +282,7 @@
       <workItem from="1673515393576" duration="1500000" />
       <workItem from="1674724627588" duration="97000" />
       <workItem from="1674724741028" duration="4336000" />
+      <workItem from="1675934280354" duration="779000" />
     </task>
     <servers />
   </component>
