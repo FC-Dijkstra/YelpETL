@@ -1,6 +1,7 @@
 *.class
 *.log
 target
+lib
 
 M2BDIA-ID-Ressources
 /src/main/resources/*
