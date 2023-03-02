@@ -1,0 +1,12 @@
+8 021 122 lignes
+
+business_id (text)
+cool (bigint)
+date (date)
+funny (bigint)
+review_id (text)
+stars (double precision)
+text (text)
+
+text contient le texte de la review en anglais.
+cool et funny sont des avis sur des review donnés par d'autres utilisateurs

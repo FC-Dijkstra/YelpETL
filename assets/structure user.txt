@@ -1,0 +1,24 @@
+1 968 703 lignes
+
+average_stars (double precision)
+compliment_cool (bigint)
+compliment_cute (bigint)
+compliment_funny (bigint)
+compliment_list (bigint)
+compliment_more (bigint)
+compliment_note (bigint)
+compliment_photos (bigint)
+compliment_plain (bigint)
+compliment_profile (bigint)
+compliment_writer (bigint)
+cool (bigint)
+fans (bigint)
+funny (bigint)
+name (text)
+review_count(bigint)
+useful (bigint)
+user_id (text)
+yelping_since (date)
+
+les compliments sont les avis d'autres utilisateurs sur une personne.
+cool, funny et useful sont le nombre d'avis qu'un utilisateur a laissé sur la review d'un autre utilisateur.

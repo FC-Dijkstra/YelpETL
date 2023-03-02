@@ -14,3 +14,7 @@ log4j.logger.org.apache.spark.SparkEnv=ERROR
 ```
 - Changer la ligne
 ```rootLogger.level = error```
+
+UPDATE:
+Tout se fait sur un serveur dédié.
+Il faut juste récupérer les jars Hadoop pour pouvoir compiler.

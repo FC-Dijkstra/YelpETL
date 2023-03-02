@@ -1,0 +1,9 @@
+101 626 600 lignes
+
+
+user_id (text)
+friend_id (text)
+spark_partition (integer)
+
+Vérifier la présence de doublons.
+P1 -> P2 et P2 -> P1 ?

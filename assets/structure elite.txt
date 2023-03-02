@@ -1,0 +1,13 @@
+232 573 lignes
+
+user_id (text)
+year (integer)
+
+Si un utilisateur est élite sur plusieurs années, son id est en doublon.
+
+ex:
+FOBRP | 2008
+FOBRP | 2009
+FOBRP | 2010
+xvu8G | 2009
+xvu8G | 2010

@@ -1,4 +1,4 @@
-1363163
+1 363 163 lignes
 
 root
  |-- _c0: string (nullable = true) [business_id]

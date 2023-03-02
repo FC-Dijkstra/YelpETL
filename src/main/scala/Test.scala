@@ -9,9 +9,9 @@ object Test {
       //.config("spark.config.option", "some-value")
       .getOrCreate();
 
-    val path_business = "D:\\Yann\\__DEV\\YelpETL\\M2BDIA-ID-Ressources\\dataset\\yelp_academic_dataset_business.json";
-    val path_checkin = "D:\\Yann\\__DEV\\YelpETL\\M2BDIA-ID-Ressources\\dataset\\yelp_academic_dataset_checkin.json";
-    val path_tip = "D:\\Yann\\__DEV\\YelpETL\\M2BDIA-ID-Ressources\\dataset\\yelp_academic_dataset_tip.csv";
+    val path_business = "/etl_data/yelp_academic_dataset_business.json";
+    val path_checkin = "/etl_data/yelp_academic_dataset_checkin.json";
+    val path_tip = "/etl_data/yelp_academic_dataset_tip.csv";
 
     val df_business = spark.read.json(path_business);
     val df_checkin = spark.read.json(path_checkin)

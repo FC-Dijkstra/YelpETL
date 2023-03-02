@@ -13,8 +13,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3b26bcb-de5e-42a1-ac8c-79c7851ecaa1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/M2BDIA_ID_FasciculeTP2023.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/structure elite.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/structure friend.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/structure review" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/structure user.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/M2BDIA_ID_FasciculeTP2023.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SETUP.md" beforeDir="false" afterPath="$PROJECT_DIR$/SETUP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/ArchitectureDW.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/assets/ArchitectureETL.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/ArchitectureDW.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/ArchitectureETL.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/datamart.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/assets/datawarehouse.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/datamart.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/datawarehouse.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/structure business.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/structure business.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/structure checkin.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/structure checkin.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/structure tip.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/structure tip.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/YelpETL_jar/YelpETL.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/YelpETL_jar/YelpETL.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Test.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Test.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,7 +297,8 @@
       <workItem from="1673515393576" duration="1500000" />
       <workItem from="1674724627588" duration="97000" />
       <workItem from="1674724741028" duration="4336000" />
-      <workItem from="1675934280354" duration="779000" />
+      <workItem from="1675934280354" duration="4834000" />
+      <workItem from="1677752494013" duration="2377000" />
     </task>
     <servers />
   </component>
