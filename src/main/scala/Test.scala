@@ -1,13 +1,20 @@
+import org.apache.log4j.{Level, Logger}
 import org.apache.spark
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{DataFrame, SparkSession}
+import com.typesafe.config.ConfigFactory;
+
 
 object Test {
   def main(args: Array[String]): Unit = {
+    Logger.getLogger("org").setLevel(Level.OFF);
     val spark = SparkSession
       .builder()
       .appName("YelpETL")
       //.config("spark.config.option", "some-value")
       .getOrCreate();
+
+    val config = ConfigFactory.load();
+    //FIXME: charger les chemins d'accès et URL DB depuis la conf
 
     val path_business = "/etl_data/yelp_academic_dataset_business.json";
     val path_checkin = "/etl_data/yelp_academic_dataset_checkin.json";
@@ -17,17 +24,19 @@ object Test {
     val df_checkin = spark.read.json(path_checkin)
     val df_tip = spark.read.csv(path_tip)
 
-    df_business.show()
-    df_business.printSchema()
-    print(df_business.count())
+    print_metadata(df_business);
+    print_metadata(df_checkin);
+    print_metadata(df_tip);
+  }
 
-    df_checkin.show()
-    df_checkin.printSchema()
-    print(df_checkin.count())
+  def print_metadata (dataframe : DataFrame): Unit = {
+    dataframe.show();
+    dataframe.printSchema();
+    print(dataframe.count);
+  }
 
-    df_tip.show()
-    df_tip.printSchema()
-    print(df_tip.count())
+  def createConnection() = {
+    val url = "jdbc:postgresql://92.141.40.32:5432/postgres"
   }
 
   def test(): Unit = {
