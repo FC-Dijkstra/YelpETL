@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="typesafe.config" type="repository">
+    <properties maven-id="com.typesafe:config:1.4.2" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/config-1.4.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
