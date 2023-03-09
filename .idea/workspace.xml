@@ -6,6 +6,7 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="YelpETL:jar" />
+      <artifact name="YelpETL:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -13,7 +14,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3b26bcb-de5e-42a1-ac8c-79c7851ecaa1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_config_1_4_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQL/createAvis.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQL/createCheckins.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQL/createCommerces.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQL/createLocalisation.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQL/createTemporalite.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SQL/createUtilisateurs.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/.bsp/sbt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_13_10_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_13_10_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/YelpETL-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/YelpETL-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/YelpETL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/YelpETL.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/datawarehouse.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/assets/datawarehouse.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/structure checkin.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/structure checkin.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/structure user.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/structure user.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/YelpETL_jar/YelpETL.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/YelpETL_jar/YelpETL.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Test.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Test.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +76,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Yann/__DEV/spark-3.3.1-bin-hadoop3/bin",
+    "last_opened_file_path": "/opt/spark",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -67,6 +87,14 @@
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "PostgreSQL"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -74,7 +102,7 @@
       <recent name="D:\Yann\__DEV\YelpETL\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Spark Submit.Spark SSH">
+  <component name="RunManager" selected="Spark Submit.Spark">
     <configuration name="sbt compile" type="SbtRunConfiguration" factoryName="sbt Task" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
@@ -243,7 +271,7 @@
         <list />
       </option>
       <option name="shellExecutor" value="/bin/sh" />
-      <option name="sparkHome" value="$PROJECT_DIR$/../spark-3.3.1-bin-hadoop3" />
+      <option name="sparkHome" value="/opt/spark/" />
       <option name="sparkMonitoringDriverId" value="" />
       <option name="supervise" value="false" />
       <option name="totalExecutorCores" value="" />
@@ -288,6 +316,12 @@
       <workItem from="1674724741028" duration="4336000" />
       <workItem from="1675934280354" duration="4834000" />
       <workItem from="1677752494013" duration="5336000" />
+      <workItem from="1678353384524" duration="809000" />
+      <workItem from="1678354231666" duration="6000" />
+      <workItem from="1678354743109" duration="588000" />
+      <workItem from="1678355345121" duration="75000" />
+      <workItem from="1678355438788" duration="3959000" />
+      <workItem from="1678366511634" duration="1253000" />
     </task>
     <servers />
   </component>

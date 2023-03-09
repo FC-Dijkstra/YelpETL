@@ -13,7 +13,7 @@ object Test {
       //.config("spark.config.option", "some-value")
       .getOrCreate();
 
-    val config = ConfigFactory.load();
+    //val config = ConfigFactory.load();
     //FIXME: charger les chemins d'accès et URL DB depuis la conf
 
     val path_business = "/etl_data/yelp_academic_dataset_business.json";
@@ -36,7 +36,7 @@ object Test {
   }
 
   def createConnection() = {
-    val url = "jdbc:postgresql://92.141.40.32:5432/postgres"
+     val url = "jdbc:postgresql://127.0.0.1:5432/postgres";
   }
 
   def test(): Unit = {

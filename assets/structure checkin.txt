@@ -3,3 +3,5 @@
 root
  |-- business_id: string (nullable = true)
  |-- date: string (nullable = true)
+
+ date est presque au format ISO
