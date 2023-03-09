@@ -2,6 +2,10 @@
 *.log
 target
 lib
+YelpETL/
+.idea/
+.bsp/
+out/
 
 M2BDIA-ID-Ressources
 /src/main/resources/*

@@ -4,7 +4,7 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
 import com.typesafe.config.ConfigFactory;
 
 
-object Test {
+object Main {
   def main(args: Array[String]): Unit = {
     Logger.getLogger("org").setLevel(Level.OFF);
     val spark = SparkSession
@@ -27,6 +27,11 @@ object Test {
     print_metadata(df_business);
     print_metadata(df_checkin);
     print_metadata(df_tip);
+
+  }
+
+  def map_business() : Unit = {
+    
   }
 
   def print_metadata (dataframe : DataFrame): Unit = {

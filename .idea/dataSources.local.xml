@@ -15,6 +15,7 @@
               <node kind="schema">
                 <name qname="etl" />
                 <name qname="yelp" />
+                <name qname="public" />
               </node>
             </node>
             <node kind="database" qname="postgres" />

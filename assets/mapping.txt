@@ -1,0 +1,5 @@
+Business
+-> adress, city, postal_code et state dans localisation
+-> attributes dans attributes
+-> categorie dans categorie
+-> stars dans stars
