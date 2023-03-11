@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="IU-223.8836.35">
+  <component name="dataSourceStorageLocal" created-in="IU-223.8836.41">
     <data-source name="yelpdata@localhost" uuid="7b799d60-7719-4b89-bfa2-91389683086f">
-      <database-info product="PostgreSQL" version="14.3" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.5.0" dbms="POSTGRES" exact-version="14.3" exact-driver-version="42.5">
+      <database-info product="PostgreSQL" version="15.2 (Ubuntu 15.2-1.pgdg22.04+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.5.0" dbms="POSTGRES" exact-version="15.2" exact-driver-version="42.5">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
-      <secret-storage>master_key</secret-storage>
+      <secret-storage>session</secret-storage>
       <user-name>postgres</user-name>
       <schema-mapping>
         <introspection-scope>
           <node negative="1">
             <node kind="database" qname="yelpdata">
               <node kind="schema">
-                <name qname="etl" />
+                <name qname="dw" />
                 <name qname="yelp" />
                 <name qname="public" />
+                <name qname="etl" />
               </node>
             </node>
             <node kind="database" qname="postgres" />

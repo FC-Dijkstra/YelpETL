@@ -1,13 +1,3 @@
-CREATE TABLE commerces (
-    id INTEGER PRIMARY KEY,
-    idLocalisation INTEGER,
-    categorie VARCHAR(128),
-    idAttributs INTEGER NOT NULL,
-    stars INTEGER NOT NULL,
-    CONSTRAINT fk_commerces_attributs FOREIGN KEY (idAttributs) REFERENCES attributsCommerces(id),
-    CONSTRAINT fk_commerces_localisation FOREIGN KEY (idLocalisation) REFERENCES localisation(id)
-);
-
 CREATE TABLE attributsCommerces (
     id INTEGER PRIMARY KEY,
     AcceptsInsurance BOOLEAN NOT NULL,
@@ -49,4 +39,14 @@ CREATE TABLE attributsCommerces (
     Smoking BOOLEAN NOT NULL,
     WheelchairAccessible BOOLEAN NOT NULL,
     WiFi BOOLEAN NOT NULL
+);
+
+CREATE TABLE commerces (
+   id INTEGER PRIMARY KEY,
+   idLocalisation INTEGER,
+   categorie VARCHAR(128),
+   idAttributs INTEGER NOT NULL,
+   stars INTEGER NOT NULL,
+   CONSTRAINT fk_commerces_attributs FOREIGN KEY (idAttributs) REFERENCES attributsCommerces(id),
+   CONSTRAINT fk_commerces_localisation FOREIGN KEY (idLocalisation) REFERENCES localisation(id)
 );
