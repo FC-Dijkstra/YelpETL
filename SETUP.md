@@ -1,4 +1,4 @@
-# Setup 
+# Setup windows
 
 - Installer Spark 3.3.1 (avec Hadoop)
 - Installer Hadoop 3.3.4
@@ -15,6 +15,12 @@ log4j.logger.org.apache.spark.SparkEnv=ERROR
 - Changer la ligne
 ```rootLogger.level = error```
 
-UPDATE:
-Tout se fait sur un serveur dédié.
-Il faut juste récupérer les jars Hadoop pour pouvoir compiler.
+# Setup Linux
+
+- JAVA 11 UNIQUEMENT (`openjdk-11-jdk`)
+- SCALA 2.13.10 UNIQUEMENT (`cs install scala:2.13.10 && cs install scalac:2.13.10`)
+- utiliser SBT pour compilation / package / run
+- le shell SBT est disponible dans intelliJ
+- utiliser `~run` pour avoir la recompilation automatique.
+- gérer les dépendances via le fichier build.sbt
+- SPARK 3.3.1 UNIQUEMENT

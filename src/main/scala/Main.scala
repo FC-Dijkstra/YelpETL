@@ -2,12 +2,8 @@ import org.apache.log4j.{Level, Logger}
 import org.apache.spark
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
 import com.typesafe.config.ConfigFactory
-import org.apache.spark.sql.types.{BooleanType, IntegerType, StructField, StructType}
+import org.apache.spark.sql.types.{BooleanType, IntegerType, StringType, StructField, StructType}
 import org.apache.spark.{SparkConf, SparkContext}
-
-import java.util.concurrent.Executors
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.{Await, ExecutionContext, Future};
 
 
 object FieldMappings {
@@ -39,6 +35,7 @@ object Main {
     //Logger.getLogger("org").setLevel(Level.OFF);
     val spark = SparkSession
       .builder()
+      .master("local")
       .appName("YelpETL")
       //.config("spark.config.option", "some-value")
       .getOrCreate();
@@ -103,33 +100,47 @@ object Main {
     ));
 
     val localisationSchema = StructType(Array(
-
-    ))
+        StructField("id", IntegerType, false),
+      StructField("adresse", StringType, false),
+      StructField("codePostal", StringType, false),
+      StructField("ville", StringType, false),
+      StructField("etat", StringType, false)
+    ));
 
 
 
     // ! Output dataframes
     val attributesDF = spark.createDataFrame(spark.sparkContext.emptyRDD[Row], attributesSchema);
+    val localisationDF = spark.createDataFrame(spark.sparkContext.emptyRDD[Row], localisationSchema);
+    map_business(df_business, attributesDF, localisationDF);
+    print_metadata(attributesDF);
+    print_metadata(localisationDF);
 
-    map_business(df_business)
+    // ! Save output dataframes
+    /*
+    attributesDF.write.format("jdbc")
+      .option("url", "jdbc:postgresql://localhost:5432/yelp_data")
+      .option("driver", "org.postgresql.Driver").option("dbtable", "DW")
+      .option("user", "postgres").option("password", "postgres")
+      .save();
+     */
   }
 
-  def map_business(businessDF : DataFrame) : Unit = {
-    val futures = Vector();
-    businessDF.foreach((business:Row) => {
-      val mappedRows = FieldMappings.Business(business)
+  def map_business(businessDF : DataFrame, attributesDF : DataFrame, localisationDF : DataFrame) : Unit = {
+    //TODO regarder pour utiliser les Futures et faire du traitement parallèle.
 
-    })
+    //split des colonnes
+    //val OGattributesDF = businessDF.select("attributes").flatMap();
+    val OGlocalisationDF = businessDF.select("address", "postal_code", "state", "city");
+    //attributesDF.union(OGattributesDF);
+    localisationDF.union(OGlocalisationDF);
+
   }
 
   def print_metadata (dataframe : DataFrame): Unit = {
     dataframe.show();
     dataframe.printSchema();
     print(dataframe.count);
-  }
-
-  def createConnection() = {
-     val url = "jdbc:postgresql://127.0.0.1:5432/postgres";
   }
 
   def test(): Unit = {
