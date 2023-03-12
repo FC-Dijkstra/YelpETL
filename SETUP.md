@@ -24,3 +24,4 @@ log4j.logger.org.apache.spark.SparkEnv=ERROR
 - utiliser `~run` pour avoir la recompilation automatique.
 - gérer les dépendances via le fichier build.sbt
 - SPARK 3.3.1 UNIQUEMENT
+- ne pas oublier de lancer `start-master.sh` pour démarer le master server spark.

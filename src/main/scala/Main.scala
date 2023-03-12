@@ -2,6 +2,8 @@ import org.apache.log4j.{Level, Logger}
 import org.apache.spark
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
 import com.typesafe.config.ConfigFactory
+import org.apache.spark.sql.catalyst.dsl.expressions.StringToAttributeConversionHelper
+import org.apache.spark.sql.functions.{monotonicallyIncreasingId, monotonically_increasing_id}
 import org.apache.spark.sql.types.{BooleanType, IntegerType, StringType, StructField, StructType}
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -32,13 +34,19 @@ object FieldMappings {
 
 object Main {
   def main(args: Array[String]): Unit = {
-    //Logger.getLogger("org").setLevel(Level.OFF);
     val spark = SparkSession
       .builder()
       .master("local")
       .appName("YelpETL")
       //.config("spark.config.option", "some-value")
       .getOrCreate();
+    spark.sparkContext.setLogLevel("ERROR")
+    val rootLogger = Logger.getRootLogger
+    rootLogger.setLevel(Level.ERROR)
+    Logger.getLogger("org.apache.spark").setLevel(Level.ERROR)
+    Logger.getLogger("org.apache.zookeeper").setLevel(Level.ERROR)
+    Logger.getLogger("org.apache.hadoop").setLevel(Level.ERROR)
+    Logger.getLogger("org.spark-project").setLevel(Level.ERROR)
 
     //val config = ConfigFactory.load();
     //FIXME: charger les chemins d'accès et URL DB depuis la conf
@@ -47,11 +55,12 @@ object Main {
     //val path_checkin = "/etl_data/yelp_academic_dataset_checkin.json";
     //val path_tip = "/etl_data/yelp_academic_dataset_tip.csv";
 
-    val df_business = spark.read.json(path_business);
+    var df_business = spark.read.json(path_business);
+    df_business = df_business.limit(15);
     //val df_checkin = spark.read.json(path_checkin)
     //val df_tip = spark.read.csv(path_tip)
 
-    print_metadata(df_business);
+    //print_metadata(df_business);
     //print_metadata(df_checkin);
     //print_metadata(df_tip);
 
@@ -100,21 +109,26 @@ object Main {
     ));
 
     val localisationSchema = StructType(Array(
-        StructField("id", IntegerType, false),
       StructField("adresse", StringType, false),
       StructField("codePostal", StringType, false),
+      StructField("etat", StringType, false),
       StructField("ville", StringType, false),
-      StructField("etat", StringType, false)
+      StructField("id", IntegerType, false),
     ));
 
 
 
     // ! Output dataframes
     val attributesDF = spark.createDataFrame(spark.sparkContext.emptyRDD[Row], attributesSchema);
-    val localisationDF = spark.createDataFrame(spark.sparkContext.emptyRDD[Row], localisationSchema);
-    map_business(df_business, attributesDF, localisationDF);
-    print_metadata(attributesDF);
-    print_metadata(localisationDF);
+    var localisationDF = spark.createDataFrame(spark.sparkContext.emptyRDD[Row], localisationSchema);
+    localisationDF = extractLocalisations(df_business, localisationDF);
+    print_metadata(localisationDF)
+    localisationDF.write.format("jdbc")
+      .option("url", "jdbc:postgresql://localhost:5432/yelpdata")
+      .option("driver", "org.postgresql.Driver").option("dbtable", "dw.localisation")
+      .option("user", "postgres").option("password", "postgres")
+      .mode("append")
+      .save();
 
     // ! Save output dataframes
     /*
@@ -126,15 +140,18 @@ object Main {
      */
   }
 
-  def map_business(businessDF : DataFrame, attributesDF : DataFrame, localisationDF : DataFrame) : Unit = {
+  def extractLocalisations(businessDF : DataFrame, localisationDF : DataFrame) : DataFrame = {
     //TODO regarder pour utiliser les Futures et faire du traitement parallèle.
 
-    //split des colonnes
-    //val OGattributesDF = businessDF.select("attributes").flatMap();
-    val OGlocalisationDF = businessDF.select("address", "postal_code", "state", "city");
-    //attributesDF.union(OGattributesDF);
-    localisationDF.union(OGlocalisationDF);
+    //extraction localisation
+    val localisationsOut  = localisationDF.union(businessDF.select(
+      businessDF("address").as("adresse"),
+      businessDF("postal_code").as("codePostal"),
+      businessDF("state").as("etat"),
+      businessDF("city").as("ville")
+    ).withColumn("id", monotonically_increasing_id()))
 
+    return localisationsOut
   }
 
   def print_metadata (dataframe : DataFrame): Unit = {
