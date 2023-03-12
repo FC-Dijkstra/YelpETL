@@ -3,40 +3,16 @@ import org.apache.spark
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
 import com.typesafe.config.ConfigFactory
 import org.apache.spark.sql.catalyst.dsl.expressions.StringToAttributeConversionHelper
-import org.apache.spark.sql.functions.{monotonicallyIncreasingId, monotonically_increasing_id}
+import org.apache.spark.sql.functions.{monotonically_increasing_id}
 import org.apache.spark.sql.types.{BooleanType, IntegerType, StringType, StructField, StructType}
 import org.apache.spark.{SparkConf, SparkContext}
-
-
-object FieldMappings {
-  def Business(business: Row): Array[Row] = {
-    if (business.anyNull) {
-      throw new Exception("Null values present in row");
-    }
-    else {
-      val stars = business.getAs[Double]("stars");
-      val adresse = business.getAs[String]("address");
-      val ville = business.getAs[String]("city");
-      val CP = business.getAs[String]("postal_code");
-      val etat = business.getAs[String]("state");
-      val categorie = business.getAs[String]("categorie");
-
-      val localisationRow = Row(adresse, ville, CP, etat);
-      val commerceRow = Row(stars, categorie)
-
-      val attributesIndex = business.fieldIndex("attributes");
-      val attributesRow = business.getStruct(attributesIndex);
-
-      return Array(localisationRow, attributesRow, commerceRow);
-    }
-  }
-}
 
 object Main {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession
       .builder()
-      .master("local")
+      //.master("local")
+      .master("spark://etl-server:7077")
       .appName("YelpETL")
       //.config("spark.config.option", "some-value")
       .getOrCreate();
@@ -52,17 +28,9 @@ object Main {
     //FIXME: charger les chemins d'accès et URL DB depuis la conf
 
     val path_business = "/etl_data/yelp_academic_dataset_business.json";
-    //val path_checkin = "/etl_data/yelp_academic_dataset_checkin.json";
-    //val path_tip = "/etl_data/yelp_academic_dataset_tip.csv";
 
-    var df_business = spark.read.json(path_business);
-    df_business = df_business.limit(15);
-    //val df_checkin = spark.read.json(path_checkin)
-    //val df_tip = spark.read.csv(path_tip)
-
-    //print_metadata(df_business);
-    //print_metadata(df_checkin);
-    //print_metadata(df_tip);
+    var businessDF = spark.read.json(path_business);
+    businessDF = businessDF.limit(15);
 
     // ! Output schemas
     val attributesSchema = StructType(Array(
@@ -116,58 +84,46 @@ object Main {
       StructField("id", IntegerType, false),
     ));
 
-
-
-    // ! Output dataframes
-    val attributesDF = spark.createDataFrame(spark.sparkContext.emptyRDD[Row], attributesSchema);
     var localisationDF = spark.createDataFrame(spark.sparkContext.emptyRDD[Row], localisationSchema);
-    localisationDF = extractLocalisations(df_business, localisationDF);
+
+    //ajout de l'id de localisation pour jointure
+    businessDF = businessDF.withColumn("idLocalisation", monotonically_increasing_id());
+    //extraction localisation
+    localisationDF = localisationDF.union(
+      businessDF.select(
+        businessDF("address").as("adresse"),
+        businessDF("postal_code").as("codePostal"),
+        businessDF("state").as("etat"),
+        businessDF("city").as("ville"),
+        businessDF("idLocalisation").as("id")
+      )
+    );
+
     print_metadata(localisationDF)
+
+    /*
     localisationDF.write.format("jdbc")
       .option("url", "jdbc:postgresql://localhost:5432/yelpdata")
       .option("driver", "org.postgresql.Driver").option("dbtable", "dw.localisation")
       .option("user", "postgres").option("password", "postgres")
       .mode("append")
       .save();
+    */
 
-    // ! Save output dataframes
-    /*
-    attributesDF.write.format("jdbc")
-      .option("url", "jdbc:postgresql://localhost:5432/yelp_data")
-      .option("driver", "org.postgresql.Driver").option("dbtable", "DW")
-      .option("user", "postgres").option("password", "postgres")
-      .save();
-     */
-  }
-
-  def extractLocalisations(businessDF : DataFrame, localisationDF : DataFrame) : DataFrame = {
-    //TODO regarder pour utiliser les Futures et faire du traitement parallèle.
-
-    //extraction localisation
-    val localisationsOut  = localisationDF.union(businessDF.select(
-      businessDF("address").as("adresse"),
-      businessDF("postal_code").as("codePostal"),
-      businessDF("state").as("etat"),
-      businessDF("city").as("ville")
-    ).withColumn("id", monotonically_increasing_id()))
-
-    return localisationsOut
+    var attributesDF = spark.createDataFrame(spark.sparkContext.emptyRDD[Row], attributesSchema)
+    businessDF = businessDF.withColumn("idAttributs", monotonically_increasing_id());
+    attributesDF = attributesDF.union(
+      businessDF.select(
+        businessDF("attributes.*"),
+        businessDF("idAttributs")
+      )
+    );
+    print_metadata(attributesDF);
   }
 
   def print_metadata (dataframe : DataFrame): Unit = {
     dataframe.show();
     dataframe.printSchema();
     print(dataframe.count);
-  }
-
-  def test(): Unit = {
-    val logFile = "D:\\Yann\\__DEV\\spark-3.3.1-bin-hadoop3\\README.md"
-    val spark = SparkSession.builder.appName("Test app").getOrCreate()
-    //spark.sparkContext.setLogLevel("WARN"); // réduire la verbose au strict minimum
-    val logData = spark.read.textFile(logFile).cache()
-    val numAs = logData.filter(line => line.contains('a')).count()
-    val numBs = logData.filter(line => line.contains("b")).count()
-    println(s"Lines with a: $numAs, Lines with b: $numBs")
-    spark.stop()
   }
 }
