@@ -14,9 +14,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3b26bcb-de5e-42a1-ac8c-79c7851ecaa1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/valeurs attributs commerces.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/.bsp/sbt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/YelpETL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/YelpETL.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SETUP.md" beforeDir="false" afterPath="$PROJECT_DIR$/SETUP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Main.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -338,6 +339,8 @@
       <workItem from="1678574152621" duration="2034000" />
       <workItem from="1678615830595" duration="1329000" />
       <workItem from="1678618629299" duration="3480000" />
+      <workItem from="1678635133536" duration="4058000" />
+      <workItem from="1678654364937" duration="64000" />
     </task>
     <servers />
   </component>

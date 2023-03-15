@@ -3,19 +3,22 @@ import org.apache.spark
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
 import com.typesafe.config.ConfigFactory
 import org.apache.spark.sql.catalyst.dsl.expressions.StringToAttributeConversionHelper
-import org.apache.spark.sql.functions.{monotonically_increasing_id}
-import org.apache.spark.sql.types.{BooleanType, IntegerType, StringType, StructField, StructType}
+import org.apache.spark.sql.functions.{col, monotonically_increasing_id}
+import org.apache.spark.sql.types.{DoubleType, IntegerType, StringType, StructField, StructType}
 import org.apache.spark.{SparkConf, SparkContext}
 
 object Main {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession
       .builder()
-      //.master("local")
-      .master("spark://etl-server:7077")
+      .master("local")
+      //.master("spark://etl-server:7077")
       .appName("YelpETL")
       //.config("spark.config.option", "some-value")
       .getOrCreate();
+
+    import spark.implicits._
+
     spark.sparkContext.setLogLevel("ERROR")
     val rootLogger = Logger.getRootLogger
     rootLogger.setLevel(Level.ERROR)
@@ -30,52 +33,53 @@ object Main {
     val path_business = "/etl_data/yelp_academic_dataset_business.json";
 
     var businessDF = spark.read.json(path_business);
-    businessDF = businessDF.limit(15);
+    //businessDF = businessDF.limit(15);
 
     // ! Output schemas
     val attributesSchema = StructType(Array(
       StructField("id", IntegerType, false),
-      StructField("AcceptsInsurance", BooleanType, false),
-      StructField("AgesAllowed", BooleanType, false),
-      StructField("Alcohol", BooleanType, false),
-      StructField("Ambience", BooleanType, false),
-      StructField("BYOB", BooleanType, false),
-      StructField("BYOBCorkage", BooleanType, false),
-      StructField("BestNights", BooleanType, false),
-      StructField("BikeParking", BooleanType, false),
-      StructField("BusinessAcceptsBitcoin", BooleanType, false),
-      StructField("BusinessAcceptsCreditCards", BooleanType, false),
-      StructField("BusinessParking", BooleanType, false),
-      StructField("ByAppointmentOnly", BooleanType, false),
-      StructField("Caters", BooleanType, false),
-      StructField("CoatCheck", BooleanType, false),
-      StructField("Corkage", BooleanType, false),
-      StructField("DietaryRestrictions", BooleanType, false),
-      StructField("DogsAllowed", BooleanType, false),
-      StructField("DriveThru", BooleanType, false),
-      StructField("GoodForDancing", BooleanType, false),
-      StructField("GoodForKids", BooleanType, false),
-      StructField("GoodForMeal", BooleanType, false),
-      StructField("HairSpecializesIn", BooleanType, false),
-      StructField("HappyHour", BooleanType, false),
-      StructField("HasTV", BooleanType, false),
-      StructField("Music", BooleanType, false),
-      StructField("NoiseLevel", BooleanType, false),
-      StructField("Open24Hours", BooleanType, false),
-      StructField("OutdoorSeating", BooleanType, false),
-      StructField("RestaurantsAttire", BooleanType, false),
-      StructField("RestaurantsCounterService", BooleanType, false),
-      StructField("RestaurantsDelivery", BooleanType, false),
-      StructField("RestaurantsGoodForGroups", BooleanType, false),
-      StructField("RestaurantsPriceRange2", BooleanType, false),
-      StructField("RestaurantsReservations", BooleanType, false),
-      StructField("RestaurantsTableService", BooleanType, false),
-      StructField("RestaurantsTakeOut", BooleanType, false),
-      StructField("Smoking", BooleanType, false),
-      StructField("WheelchairAccessible", BooleanType, false),
-      StructField("WiFi", BooleanType, false),
+      StructField("AcceptsInsurance", StringType, false),
+      StructField("AgesAllowed", StringType, false),
+      StructField("Alcohol", StringType, false),
+      StructField("Ambience", StringType, false),
+      StructField("BYOB", StringType, false),
+      StructField("BYOBCorkage", StringType, false),
+      StructField("BestNights", StringType, false),
+      StructField("BikeParking", StringType, false),
+      StructField("BusinessAcceptsBitcoin", StringType, false),
+      StructField("BusinessAcceptsCreditCards", StringType, false),
+      StructField("BusinessParking", StringType, false),
+      StructField("ByAppointmentOnly", StringType, false),
+      StructField("Caters", StringType, false),
+      StructField("CoatCheck", StringType, false),
+      StructField("Corkage", StringType, false),
+      StructField("DietaryRestrictions", StringType, false),
+      StructField("DogsAllowed", StringType, false),
+      StructField("DriveThru", StringType, false),
+      StructField("GoodForDancing", StringType, false),
+      StructField("GoodForKids", StringType, false),
+      StructField("GoodForMeal", StringType, false),
+      StructField("HairSpecializesIn", StringType, false),
+      StructField("HappyHour", StringType, false),
+      StructField("HasTV", StringType, false),
+      StructField("Music", StringType, false),
+      StructField("NoiseLevel", StringType, false),
+      StructField("Open24Hours", StringType, false),
+      StructField("OutdoorSeating", StringType, false),
+      StructField("RestaurantsAttire", StringType, false),
+      StructField("RestaurantsCounterService", StringType, false),
+      StructField("RestaurantsDelivery", StringType, false),
+      StructField("RestaurantsGoodForGroups", StringType, false),
+      StructField("RestaurantsPriceRange2", StringType, false),
+      StructField("RestaurantsReservations", StringType, false),
+      StructField("RestaurantsTableService", StringType, false),
+      StructField("RestaurantsTakeOut", StringType, false),
+      StructField("Smoking", StringType, false),
+      StructField("WheelchairAccessible", StringType, false),
+      StructField("WiFi", StringType, false),
     ));
 
+    // ############################## Localisation
     val localisationSchema = StructType(Array(
       StructField("adresse", StringType, false),
       StructField("codePostal", StringType, false),
@@ -99,7 +103,7 @@ object Main {
       )
     );
 
-    print_metadata(localisationDF)
+    //print_metadata(localisationDF)
 
     /*
     localisationDF.write.format("jdbc")
@@ -110,15 +114,53 @@ object Main {
       .save();
     */
 
+    //########################## Attributs des commerces
     var attributesDF = spark.createDataFrame(spark.sparkContext.emptyRDD[Row], attributesSchema)
     businessDF = businessDF.withColumn("idAttributs", monotonically_increasing_id());
     attributesDF = attributesDF.union(
       businessDF.select(
-        businessDF("attributes.*"),
-        businessDF("idAttributs")
+        col("idAttributs"),
+        col("attributes.*")
       )
     );
+
     print_metadata(attributesDF);
+
+    for (columnName <- attributesDF.columns){
+      println("---" + columnName + "---")
+      if (columnName != "idAttributs" && columnName != "id"){
+        val valeursColonne = attributesDF
+          .select(columnName)
+          .distinct()
+          .map(f => f.getString(0))
+          .collect()
+          .toList
+        println(valeursColonne)
+        println()
+      }
+    }
+
+    //########################### Commerces
+
+    val commercesSchema = StructType(Array(
+      StructField("internal_id", StringType, false),
+      StructField("idAttributs", IntegerType, false),
+      StructField("idLocalisation", IntegerType, false),
+      StructField("categorie", StringType, true),
+      StructField("stars", DoubleType, false),
+      StructField("id", IntegerType, false),
+    ))
+    var commercesDF = spark.createDataFrame(spark.sparkContext.emptyRDD[Row], commercesSchema)
+    commercesDF = commercesDF.union(
+      businessDF.select(
+        col("business_id").as("internal_id"),
+        col("idAttributs"),
+        col("idLocalisation"),
+        col("categorie"),
+        col("stars"),
+      ).withColumn("id", monotonically_increasing_id())
+    )
+    print_metadata(commercesDF)
   }
 
   def print_metadata (dataframe : DataFrame): Unit = {

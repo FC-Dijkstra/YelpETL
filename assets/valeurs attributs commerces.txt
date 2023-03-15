@@ -1,0 +1,119 @@
+---AcceptsInsurance---
+List(None, False, null, True)
+
+---AgesAllowed---
+List(None, null, u'18plus', u'21plus', u'allages', u'19plus')
+
+---Alcohol---
+List(None, u'none', null, 'beer_and_wine', 'none', u'beer_and_wine', u'full_bar', 'full_bar')
+
+---Ambience---
+List({'touristy': None, 'hipster': None, 'romantic': None, 'divey': False, 'intimate': True, 'trendy': None, 'upscale': None, 'classy': None, 'casual': None},
+Chaque champ peut prendre None, True ou False
+
+---BYOB---
+List(None, False, null, True)
+
+---BYOBCorkage---
+List(None, null, 'no', u'yes_corkage', u'no', 'yes_free', 'yes_corkage', u'yes_free')
+
+---BestNights---
+List({'monday': True, 'tuesday': False, 'friday': False, 'wednesday': True, 'thursday': False, 'sunday': True, 'saturday': False},
+Chaque champ peut prendre True ou False
+
+---BikeParking---
+List(None, False, null, True)
+
+---BusinessAcceptsBitcoin---
+List(None, False, null, True)
+
+---BusinessAcceptsCreditCards---
+List(None, False, null, True)
+
+---BusinessParking---
+List({'garage': False, 'street': None, 'validated': False, 'lot': None, 'valet': False}, {}, {'garage': True, 'street': False, 'validated': True, 'lot': False, 'valet': False},
+Chaque champ peut prendre True, False, None
+
+---ByAppointmentOnly---
+List(None, False, null, True)
+
+---Caters---
+List(None, False, null, True)
+
+---CoatCheck---
+List(None, False, null, True)
+
+---Corkage---
+List(None, False, null, True)
+
+---DietaryRestrictions---
+List({'dairy-free': False, 'gluten-free': True, 'vegan': False, 'kosher': False, 'halal': False, 'soy-free': False, 'vegetarian': True}, {'dairy-free': False, 'gluten-free': False, 'vegan': False, 'kosher': False, 'halal': True, 'soy-free': False, 'vegetarian': False}, None, {'dairy-free': False, 'gluten-free': True, 'vegan': True, 'kosher': False, 'halal': False, 'soy-free': False, 'vegetarian': False}, {'dairy-free': False, 'gluten-free': True, 'vegan': False, 'kosher': False, 'halal': False, 'soy-free': False, 'vegetarian': False}, null, {'dairy-free': False, 'gluten-free': False, 'vegan': True, 'kosher': False, 'halal': False, 'soy-free': False, 'vegetarian': True}, {'dairy-free': True, 'gluten-free': False, 'vegan': False, 'kosher': False, 'halal': False, 'soy-free': False, 'vegetarian': False}, {'dairy-free': False, 'gluten-free': False, 'vegan': False, 'kosher': False, 'halal': False, 'soy-free': False, 'vegetarian': True}, {'dairy-free': False, 'gluten-free': True, 'vegan': True, 'kosher': False, 'halal': False, 'soy-free': False, 'vegetarian': True}, {'dairy-free': True, 'gluten-free': True, 'vegan': True, 'kosher': False, 'halal': False, 'soy-free': True, 'vegetarian': True}, {'dairy-free': False, 'gluten-free': False, 'vegan': True, 'kosher': False, 'halal': False, 'soy-free': False, 'vegetarian': False}, {'dairy-free': True, 'gluten-free': False, 'vegan': True, 'kosher': False, 'halal': False, 'soy-free': False, 'vegetarian': True})
+
+---DogsAllowed---
+List(None, False, null, True)
+
+---DriveThru---
+List(None, False, null, True)
+
+---GoodForDancing---
+List(None, False, null, True)
+
+---GoodForKids---
+List(None, False, null, True)
+
+---GoodForMeal---
+List({'dessert': True, 'latenight': True, 'lunch': None, 'dinner': True, 'brunch': None, 'breakfast': None}, {'dessert': False, 'latenight': False, 'lunch': True, 'dinner': False, 'breakfast': False, 'brunch': False}, {'dessert': True, 'latenight': False, 'lunch': None, 'dinner': True, 'brunch': None, 'breakfast': False}, {'dessert': False, 'latenight': None, 'lunch': None, 'dinner': True, 'brunch': False, 'breakfast': False}, {'dessert': True, 'latenight': None, 'lunch': True, 'dinner': None, 'brunch': False, 'breakfast': False}, {'dessert': None, 'latenight': None, 'lunch': False, 'dinner': True, 'brunch': True, 'breakfast': False}, {'dessert': None, 'latenight': False, 'lunch': True, 'dinner': True, 'brunch': True, 'breakfast': False},
+
+---HairSpecializesIn---
+List({'perms': True, 'coloring': True, 'extensions': True, 'curly': False, 'kids': False}, {'straightperms': False, 'coloring': True, 'extensions': False, 'africanamerican': True, 'curly': False, 'kids': True, 'perms': True, 'asian': True}, {'straightperms': False, 'coloring': True, 'extensions': False, 'africanamerican': False, 'curly': True, 'kids': True, 'perms': False, 'asian': False}, {'straightperms': True, 'coloring': True, 'extensions': False, 'africanamerican': False, 'curly': True, 'kids': True, 'perms': False, 'asian': True}, {'straightperms': False, 'coloring': True, 'extensions': False, 'africanamerican': True, 'curly': True, 'kids': True, 'perms': False, 'asian': True}, {'straightperms': True, 'coloring': True, 'extensions': True, 'africanamerican': True, 'curly': False, 'kids': False, 'perms': True, 'asian': False}, {'straightperms': True, 'coloring': True, 'extensions': True, 'africanamerican': True, 'curly': True, 'kids': True, 'perms': False, 'asian': True},
+
+---HappyHour---
+List(None, False, null, True)
+
+---HasTV---
+List(None, False, null, True)
+
+---Music---
+List({'dj': False, 'karaoke': False}, {'dj': True, 'background_music': False, 'no_music': False, 'jukebox': None, 'live': True, 'video': False, 'karaoke': None}, {'dj': True, 'background_music': False, 'no_music': False, 'jukebox': False, 'live': True, 'video': False, 'karaoke': False}, {'karaoke': False}, {'dj': False, 'live': True, 'video': False, 'jukebox': False}, {'dj': None, 'background_music': False, 'no_music': False, 'jukebox': True, 'live': None, 'video': False, 'karaoke': None}, {}, {'dj': False, 'background_music': False, 'no_music': False, 'jukebox': False, 'live': False, 'video': False, 'karaoke': None}, {'dj': False, 'background_music': False, 'no_music': False, 'jukebox': False, 'live': True, 'video': False, 'karaoke': None}, {'dj': False, 'background_music': False, 'no_music': False, 'jukebox': False, 'live': False, 'video': False, 'karaoke': False}, None, {'dj': False, 'background_music': True, 'no_music': False, 'jukebox': True, 'live': True, 'video': False, 'karaoke': False}, {'dj': False, 'background_music': False, 'jukebox': False, 'live': True, 'video': False, 'karaoke': False}, {'dj': True, 'background_music': False, 'no_music': False, 'jukebox': False, 'live': True, 'video': False, 'karaoke': True}, {'dj': False, 'background_music': False, 'no_music': False, 'jukebox': None, 'live': True, 'video': False, 'karaoke': None}, {'dj': False, 'background_music': True, 'no_music': False, 'jukebox': False, 'live': True, 'video': False, 'karaoke': False}, {'dj': True, 'background_music': True, 'jukebox': False, 'live': True, 'video': True, 'karaoke': True}, {'dj': False, 'background_music': True, 'no_music': False, 'jukebox': True, 'live': False, 'video': True, 'karaoke': True},
+
+---NoiseLevel---
+List('average', None, u'loud', u'quiet', null, u'average', 'very_loud', 'quiet', u'very_loud', 'loud')
+
+---Open24Hours---
+List(False, null, True)
+
+---OutdoorSeating---
+List(None, False, null, True)
+
+---RestaurantsAttire---
+List('casual', None, u'casual', null, 'dressy', 'formal', u'formal', u'dressy')
+
+---RestaurantsCounterService---
+List(False, null, True)
+
+---RestaurantsDelivery---
+List(None, False, null, True)
+
+---RestaurantsGoodForGroups---
+List(None, False, null, True)
+
+---RestaurantsPriceRange2---
+List(3, None, null, 1, 4, 2)
+
+---RestaurantsReservations---
+List(None, False, null, True)
+
+---RestaurantsTableService---
+List(None, False, null, True)
+
+---RestaurantsTakeOut---
+List(None, False, null, True)
+
+---Smoking---
+List(u'outdoor', None, null, 'no', u'no', 'yes', 'outdoor', u'yes')
+
+---WheelchairAccessible---
+List(None, False, null, True)
+
+---WiFi---
+List(None, 'paid', null, 'no', u'paid', u'no', u'free', 'free')
