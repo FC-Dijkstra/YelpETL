@@ -1,18 +1,19 @@
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
-import com.typesafe.config.ConfigFactory
 import org.apache.spark.sql.catalyst.dsl.expressions.StringToAttributeConversionHelper
 import org.apache.spark.sql.functions.{col, monotonically_increasing_id}
 import org.apache.spark.sql.types.{DoubleType, IntegerType, StringType, StructField, StructType}
 import org.apache.spark.{SparkConf, SparkContext}
 
+import java.util.Properties
+
 object Main {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession
       .builder()
-      .master("local")
-      //.master("spark://etl-server:7077")
+      //.master("local")
+      .master("spark://etl-server:7077")
       .appName("YelpETL")
       //.config("spark.config.option", "some-value")
       .getOrCreate();
@@ -27,12 +28,15 @@ object Main {
     Logger.getLogger("org.apache.hadoop").setLevel(Level.ERROR)
     Logger.getLogger("org.spark-project").setLevel(Level.ERROR)
 
-    //val config = ConfigFactory.load();
-    //FIXME: charger les chemins d'accès et URL DB depuis la conf
+    val dbUrl = "jdbc:postgresql://etl-server:5432/yelp_data"
+    val connection = new Properties()
+    connection.setProperty("driver", "org.postgresql.Driver")
+    connection.setProperty("user", "postgres")
+    connection.setProperty("password", "postgres")
 
     val path_business = "/etl_data/yelp_academic_dataset_business.json";
 
-    var businessDF = spark.read.json(path_business);
+    var businessDF = spark.read.json(path_business).cache();
     //businessDF = businessDF.limit(15);
 
     // ! Output schemas
@@ -95,24 +99,17 @@ object Main {
     //extraction localisation
     localisationDF = localisationDF.union(
       businessDF.select(
-        businessDF("address").as("adresse"),
-        businessDF("postal_code").as("codePostal"),
-        businessDF("state").as("etat"),
-        businessDF("city").as("ville"),
-        businessDF("idLocalisation").as("id")
+        col("address").as("adresse"),
+        col("postal_code").as("codePostal"),
+        col("state").as("etat"),
+        col("city").as("ville"),
+        col("idLocalisation").as("id")
       )
     );
 
     //print_metadata(localisationDF)
 
-    /*
-    localisationDF.write.format("jdbc")
-      .option("url", "jdbc:postgresql://localhost:5432/yelpdata")
-      .option("driver", "org.postgresql.Driver").option("dbtable", "dw.localisation")
-      .option("user", "postgres").option("password", "postgres")
-      .mode("append")
-      .save();
-    */
+    //localisationDF.write.mode("append").jdbc(dbUrl, "dw.localisation", connection);
 
     //########################## Attributs des commerces
     var attributesDF = spark.createDataFrame(spark.sparkContext.emptyRDD[Row], attributesSchema)
@@ -126,6 +123,7 @@ object Main {
 
     print_metadata(attributesDF);
 
+    /*
     for (columnName <- attributesDF.columns){
       println("---" + columnName + "---")
       if (columnName != "idAttributs" && columnName != "id"){
@@ -139,6 +137,7 @@ object Main {
         println()
       }
     }
+     */
 
     //########################### Commerces
 
@@ -146,7 +145,7 @@ object Main {
       StructField("internal_id", StringType, false),
       StructField("idAttributs", IntegerType, false),
       StructField("idLocalisation", IntegerType, false),
-      StructField("categorie", StringType, true),
+      StructField("categories", StringType, true),
       StructField("stars", DoubleType, false),
       StructField("id", IntegerType, false),
     ))
@@ -156,11 +155,15 @@ object Main {
         col("business_id").as("internal_id"),
         col("idAttributs"),
         col("idLocalisation"),
-        col("categorie"),
+        col("categories"),
         col("stars"),
       ).withColumn("id", monotonically_increasing_id())
     )
     print_metadata(commercesDF)
+
+
+
+
   }
 
   def print_metadata (dataframe : DataFrame): Unit = {

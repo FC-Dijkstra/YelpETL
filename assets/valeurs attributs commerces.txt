@@ -1,11 +1,14 @@
 ---AcceptsInsurance---
 List(None, False, null, True)
+=> None, False, True
 
 ---AgesAllowed---
 List(None, null, u'18plus', u'21plus', u'allages', u'19plus')
+=> None, 18plus, 21plus, 19plus, allages
 
 ---Alcohol---
 List(None, u'none', null, 'beer_and_wine', 'none', u'beer_and_wine', u'full_bar', 'full_bar')
+=> None, beer_and_wine, full_bar
 
 ---Ambience---
 List({'touristy': None, 'hipster': None, 'romantic': None, 'divey': False, 'intimate': True, 'trendy': None, 'upscale': None, 'classy': None, 'casual': None},
@@ -13,9 +16,11 @@ Chaque champ peut prendre None, True ou False
 
 ---BYOB---
 List(None, False, null, True)
+=> None, False, True
 
 ---BYOBCorkage---
 List(None, null, 'no', u'yes_corkage', u'no', 'yes_free', 'yes_corkage', u'yes_free')
+None, no, yes_corkage, yes_free
 
 ---BestNights---
 List({'monday': True, 'tuesday': False, 'friday': False, 'wednesday': True, 'thursday': False, 'sunday': True, 'saturday': False},
@@ -23,12 +28,15 @@ Chaque champ peut prendre True ou False
 
 ---BikeParking---
 List(None, False, null, True)
+=> None, False, True
 
 ---BusinessAcceptsBitcoin---
 List(None, False, null, True)
+=> None, False, True
 
 ---BusinessAcceptsCreditCards---
 List(None, False, null, True)
+=> None, False, True
 
 ---BusinessParking---
 List({'garage': False, 'street': None, 'validated': False, 'lot': None, 'valet': False}, {}, {'garage': True, 'street': False, 'validated': True, 'lot': False, 'valet': False},
@@ -117,3 +125,4 @@ List(None, False, null, True)
 
 ---WiFi---
 List(None, 'paid', null, 'no', u'paid', u'no', u'free', 'free')
+=> None, paid, Free

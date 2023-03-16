@@ -14,10 +14,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3b26bcb-de5e-42a1-ac8c-79c7851ecaa1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/valeurs attributs commerces.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/plugins.sbt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/SimpleApp.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/.bsp/sbt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_config_1_4_2_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_13_10_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/YelpETL-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/YelpETL-build.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/YelpETL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/YelpETL.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/valeurs attributs commerces.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/valeurs attributs commerces.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Main.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,44 +73,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/yann/dev/YelpETL/target/scala-2.13/yelpetl_2.13-0.1.0-SNAPSHOT.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Yann/__DEV/YelpETL/target/scala-2.12/yelpetl_2.12-0.1.0-SNAPSHOT.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
-      &quot;PostgreSQL&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "PostgreSQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Yann\__DEV\YelpETL\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Spark Submit.Spark">
+  <component name="RunManager" selected="Spark Submit.Spark SSH">
     <configuration name="sbt compile" type="SbtRunConfiguration" factoryName="sbt Task" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
@@ -124,7 +130,7 @@
         <list />
       </option>
       <option name="tasks" value="package" />
-      <option name="useSbtShell" value="true" />
+      <option name="useSbtShell" value="false" />
       <option name="vmparams" value="-Xms512M -Xmx1024M -Xss1M -XX:+CMSClassUnloadingEnabled" />
       <option name="workingDir" value="$PROJECT_DIR$" />
       <method v="2">
@@ -139,13 +145,13 @@
       <option name="artifactArgs" value="" />
       <option name="artifactPath">
         <FilePath>
-          <option name="path" value="YelpETL:jar" />
-          <option name="type" value="ARTIFACT" />
+          <option name="path" value="$PROJECT_DIR$/target/scala-2.12/yelpetl_2.12-0.1.0-SNAPSHOT.jar" />
+          <option name="type" value="UPLOAD" />
         </FilePath>
       </option>
       <option name="beforeShellScript" value="" />
-      <option name="className" value="" />
-      <option name="clusterManager" value="LOCAL" />
+      <option name="className" value="Main" />
+      <option name="clusterManager" value="STANDALONE" />
       <option name="conf" value="" />
       <option name="deployMode" value="CLIENT" />
       <option name="driverClassPath">
@@ -197,7 +203,7 @@
       <option name="shellExecutor" value="/bin/bash" />
       <option name="sparkHome" value="/opt/spark" />
       <option name="sparkMonitoringDriverId" value="" />
-      <option name="sshConfigId" value="" />
+      <option name="sshConfigId" value="40d5d32c-ec54-4167-88c4-3a62bee82514" />
       <option name="supervise" value="false" />
       <option name="targetDirectory">
         <FilePath>
@@ -214,7 +220,6 @@
         </FilePath>
       </option>
       <method v="2">
-        <option name="BuildArtifacts" enabled="true" />
         <option name="SftpSparkFileUpload" enabled="true" />
       </method>
     </configuration>
@@ -297,8 +302,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="sbt Task.sbt package" />
       <item itemvalue="sbt Task.sbt compile" />
+      <item itemvalue="sbt Task.sbt package" />
       <item itemvalue="Spark Submit.Spark" />
       <item itemvalue="Spark Submit.Spark SSH" />
     </list>
@@ -341,6 +346,14 @@
       <workItem from="1678618629299" duration="3480000" />
       <workItem from="1678635133536" duration="4058000" />
       <workItem from="1678654364937" duration="64000" />
+      <workItem from="1678901646787" duration="1171000" />
+      <workItem from="1678958367171" duration="72000" />
+      <workItem from="1678960542290" duration="276000" />
+      <workItem from="1678987097809" duration="3075000" />
+      <workItem from="1678990431832" duration="29000" />
+      <workItem from="1678990473286" duration="22000" />
+      <workItem from="1678990507334" duration="119000" />
+      <workItem from="1678992016075" duration="2805000" />
     </task>
     <servers />
   </component>
