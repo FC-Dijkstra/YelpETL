@@ -14,16 +14,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3b26bcb-de5e-42a1-ac8c-79c7851ecaa1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/project/plugins.sbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/SimpleApp.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/.bsp/sbt.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_config_1_4_2_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_13_10_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/YelpETL-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/YelpETL-build.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/YelpETL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/YelpETL.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/valeurs attributs commerces.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/valeurs attributs commerces.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/datawarehouse.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/assets/datawarehouse.drawio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Main.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,38 +66,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Yann/__DEV/YelpETL/target/scala-2.12/yelpetl_2.12-0.1.0-SNAPSHOT.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Yann/__DEV/YelpETL/target/scala-2.12/yelpetl_2.12-0.1.0-SNAPSHOT.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
-      "PostgreSQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
+      &quot;PostgreSQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Yann\__DEV\YelpETL\src\main\resources" />
@@ -155,7 +148,12 @@
       <option name="conf" value="" />
       <option name="deployMode" value="CLIENT" />
       <option name="driverClassPath">
-        <list />
+        <list>
+          <FilePath>
+            <option name="path" value="/home/yann/.ivy2/jars/org.postgresql_postgresql-42.5.4.jar" />
+            <option name="type" value="CUSTOM" />
+          </FilePath>
+        </list>
       </option>
       <option name="driverCores" value="" />
       <option name="driverJavaOptions" value="" />
@@ -203,7 +201,7 @@
       <option name="shellExecutor" value="/bin/bash" />
       <option name="sparkHome" value="/opt/spark" />
       <option name="sparkMonitoringDriverId" value="" />
-      <option name="sshConfigId" value="40d5d32c-ec54-4167-88c4-3a62bee82514" />
+      <option name="sshConfigId" value="79806ef2-a80a-4ef7-9b9e-6f09e8b7fc4d" />
       <option name="supervise" value="false" />
       <option name="targetDirectory">
         <FilePath>
@@ -354,6 +352,7 @@
       <workItem from="1678990473286" duration="22000" />
       <workItem from="1678990507334" duration="119000" />
       <workItem from="1678992016075" duration="2805000" />
+      <workItem from="1679044154938" duration="5865000" />
     </task>
     <servers />
   </component>

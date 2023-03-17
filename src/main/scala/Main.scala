@@ -5,6 +5,7 @@ import org.apache.spark.sql.catalyst.dsl.expressions.StringToAttributeConversion
 import org.apache.spark.sql.functions.{col, monotonically_increasing_id}
 import org.apache.spark.sql.types.{DoubleType, IntegerType, StringType, StructField, StructType}
 import org.apache.spark.{SparkConf, SparkContext}
+import org.postgresql.Driver
 
 import java.util.Properties
 
@@ -12,8 +13,8 @@ object Main {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession
       .builder()
-      //.master("local")
-      .master("spark://etl-server:7077")
+      .master("local")
+      //.master("spark://etl-server:7077")
       .appName("YelpETL")
       //.config("spark.config.option", "some-value")
       .getOrCreate();
@@ -109,9 +110,16 @@ object Main {
 
     //print_metadata(localisationDF)
 
-    //localisationDF.write.mode("append").jdbc(dbUrl, "dw.localisation", connection);
-
+    //localisationDF.write.mode("overwrite").jdbc(dbUrl, "dw.localisation", connection);
+    localisationDF.write.format("jdbc")
+      .option("url", "jdbc:postgresql://localhost:5432/yelpdata")
+      .option("driver", "org.postgresql.Driver")
+      .option("dbtable", "dw.localisation")
+      .option("user", "postgres").option("password", "postgres")
+      .mode("append")
+      .save()
     //########################## Attributs des commerces
+    /*
     var attributesDF = spark.createDataFrame(spark.sparkContext.emptyRDD[Row], attributesSchema)
     businessDF = businessDF.withColumn("idAttributs", monotonically_increasing_id());
     attributesDF = attributesDF.union(
@@ -122,7 +130,7 @@ object Main {
     );
 
     print_metadata(attributesDF);
-
+    */
     /*
     for (columnName <- attributesDF.columns){
       println("---" + columnName + "---")
@@ -142,27 +150,35 @@ object Main {
     //########################### Commerces
 
     val commercesSchema = StructType(Array(
-      StructField("internal_id", StringType, false),
-      StructField("idAttributs", IntegerType, false),
-      StructField("idLocalisation", IntegerType, false),
-      StructField("categories", StringType, true),
-      StructField("stars", DoubleType, false),
-      StructField("id", IntegerType, false),
+      //StructField("internal_id", StringType, false),
+      //StructField("idAttributs", IntegerType, nullable = true),
+      StructField("idLocalisation", IntegerType, nullable = false),
+      StructField("categories", StringType, nullable = true),
+      StructField("stars", DoubleType, nullable = false),
+      StructField("nom", StringType, nullable = false),
+      StructField("id", IntegerType, nullable = false),
     ))
     var commercesDF = spark.createDataFrame(spark.sparkContext.emptyRDD[Row], commercesSchema)
     commercesDF = commercesDF.union(
       businessDF.select(
-        col("business_id").as("internal_id"),
-        col("idAttributs"),
+        //col("business_id").as("internal_id"),
+        //col("idAttributs"),
         col("idLocalisation"),
         col("categories"),
         col("stars"),
+        col("name")
       ).withColumn("id", monotonically_increasing_id())
     )
     print_metadata(commercesDF)
 
-
-
+    //localisationDF.write.mode("overwrite").jdbc(dbUrl, "dw.commerces", connection);
+    commercesDF.write.format("jdbc")
+      .option("url", "jdbc:postgresql://localhost:5432/yelpdata")
+      .option("driver", "org.postgresql.Driver")
+      .option("dbtable", "dw.commerces")
+      .option("user", "postgres").option("password", "postgres")
+      .mode("append")
+      .save()
 
   }
 
