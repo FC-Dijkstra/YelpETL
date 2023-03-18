@@ -7,6 +7,8 @@ funny (bigint)
 review_id (text)
 stars (double precision)
 text (text)
+user_id(text)
+useful(text)
 
 text contient le texte de la review en anglais.
 cool et funny sont des avis sur des review donnés par d'autres utilisateurs

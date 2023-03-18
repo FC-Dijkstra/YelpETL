@@ -26,4 +26,15 @@ Friend
 
 Checking
 -> jointure avec Business
-->
+-> exploser les dates
+-> retirer les heures
+-> regrouper pour chaque commerce et date
+-> sortir les dates dans une DF
+-> jointure entre les dates et la DF principale
+
+Reviews
+-> retirer l'heure des dates
+-> union avec la DF dates de Checking
+-> jointure avec business pour l'id
+-> jointure avec users pour l'id
+-> jointure avec les dates pour l'id
