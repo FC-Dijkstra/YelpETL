@@ -3,3 +3,27 @@ Business
 -> attributes dans attributes
 -> categorie dans categorie
 -> stars dans stars
+
+Users
+-> combiner compliment_cool|cute|funny|list|more|note|photos|plain|profile|write
+-> combiner cool|funny|useful
+-> average_stars dans etoiles_moyennes
+-> name dans nom
+-> review_count dans nbRevues
+-> user_id dans ???
+-> yelping_since dans creationCompte
+-> fans dans followers
+
+Elite
+-> regrouper pour chaque userId
+-> compter le nb d'années pour chaque userId
+-> jointure dans Users
+
+Friend
+-> regrouper pour chaque userId
+-> compter le nb d'amis pour chaque userId
+-> jointure dans Users
+
+Checking
+-> jointure avec Business
+->

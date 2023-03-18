@@ -4,4 +4,6 @@ root
  |-- business_id: string (nullable = true)
  |-- date: string (nullable = true)
 
+date est une liste de valeurs de date presque au format ISO:
+YYYY-MM-DD HH:MM:SS
  date est presque au format ISO

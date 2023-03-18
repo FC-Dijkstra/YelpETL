@@ -14,9 +14,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3b26bcb-de5e-42a1-ac8c-79c7851ecaa1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules/YelpETL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/YelpETL.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/datawarehouse.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/assets/datawarehouse.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/structure checkin.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/structure checkin.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Main.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +51,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -160,7 +165,7 @@
       <option name="driverLibraryPath">
         <list />
       </option>
-      <option name="driverMemory" value="" />
+      <option name="driverMemory" value="32g" />
       <option name="envParams" value="" />
       <option name="excludePackages" value="" />
       <option name="executorCores" value="" />
@@ -178,7 +183,7 @@
           <option name="type" value="CUSTOM" />
         </FilePath>
       </option>
-      <option name="master" value="local" />
+      <option name="master" value="local[*]" />
       <option name="numExecutors" value="" />
       <option name="packages" value="" />
       <option name="principal" value="" />
@@ -352,7 +357,11 @@
       <workItem from="1678990473286" duration="22000" />
       <workItem from="1678990507334" duration="119000" />
       <workItem from="1678992016075" duration="2805000" />
-      <workItem from="1679044154938" duration="5865000" />
+      <workItem from="1679044154938" duration="6526000" />
+      <workItem from="1679058277881" duration="10732000" />
+      <workItem from="1679073644742" duration="5055000" />
+      <workItem from="1679134559845" duration="746000" />
+      <workItem from="1679136228087" duration="12426000" />
     </task>
     <servers />
   </component>
