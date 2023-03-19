@@ -15,8 +15,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c3b26bcb-de5e-42a1-ac8c-79c7851ecaa1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/assets/mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/structure review" beforeDir="false" afterPath="$PROJECT_DIR$/assets/structure review" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.run/Spark SSH.run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.run/Spark SSH.run.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Main.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,7 +192,8 @@
       <workItem from="1679073644742" duration="5055000" />
       <workItem from="1679134559845" duration="746000" />
       <workItem from="1679136228087" duration="12426000" />
-      <workItem from="1679156913522" duration="6357000" />
+      <workItem from="1679156913522" duration="6385000" />
+      <workItem from="1679167309616" duration="9030000" />
     </task>
     <servers />
   </component>
