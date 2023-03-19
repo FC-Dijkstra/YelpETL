@@ -1,0 +1,173 @@
+# LOCALISATION
+
+INSERT INTO mockdw.localisation (id, adresse, codepostal, ville, etat) VALUES 
+(1, '12 Rue des Lilas', '75015', 'Paris', 'Île-de-France'),
+(2, '25 Avenue des Champs-Élysées', '75008', 'Paris', 'Île-de-France'),
+(3, '8 Rue de la République', '13001', 'Marseille', 'Provence-Alpes-Côte d\'Azur'),
+(4, '2 Rue de la Paix', '75002', 'Paris', 'Île-de-France'),
+(5, '27 Rue Saint-Jacques', '75005', 'Paris', 'Île-de-France'),
+(6, '15 Rue de la Gare', '69009', 'Lyon', 'Auvergne-Rhône-Alpes'),
+(7, '40 Rue du Faubourg Saint-Antoine', '75012', 'Paris', 'Île-de-France'),
+(8, '3 Rue des Francs-Bourgeois', '75004', 'Paris', 'Île-de-France'),
+(9, '6 Rue du Pont-Neuf', '75001', 'Paris', 'Île-de-France'),
+(10, '23 Rue du Bac', '75007', 'Paris', 'Île-de-France'),
+(11, '9 Rue de la Paix', '75002', 'Paris', 'Île-de-France'),
+(12, '17 Rue Saint-Honoré', '75001', 'Paris', 'Île-de-France'),
+(13, '22 Rue de la Roquette', '75011', 'Paris', 'Île-de-France'),
+(14, '10 Avenue des Ternes', '75017', 'Paris', 'Île-de-France'),
+(15, '6 Rue des Archives', '75004', 'Paris', 'Île-de-France'),
+(16, '14 Rue de la Pompe', '75116', 'Paris', 'Île-de-France'),
+(17, '19 Rue du Cherche-Midi', '75006', 'Paris', 'Île-de-France'),
+(18, '5 Rue Saint-Séverin', '75005', 'Paris', 'Île-de-France'),
+(19, '13 Rue de la Chaussée-d\'Antin', '75009', 'Paris', 'Île-de-France'),
+(20, '2 Rue du Faubourg Saint-Honoré', '75008', 'Paris', 'Île-de-France');
+
+INSERT INTO mockdw.localisation (id, adresse, codepostal, ville, etat) VALUES 
+(21, '32 Rue de la Caravelle', '13008', 'Marseille', 'Provence-Alpes-Côte d\'Azur'),
+(22, '5 Rue de la Paix', '44000', 'Nantes', 'Pays de la Loire'),
+(23, '14 Rue de la Boucherie', '34000', 'Montpellier', 'Occitanie'),
+(24, '7 Rue de la Cathédrale', '31000', 'Toulouse', 'Occitanie'),
+(25, '9 Rue de la République', '59000', 'Lille', 'Hauts-de-France'),
+(26, '20 Rue de la Liberté', '69001', 'Lyon', 'Auvergne-Rhône-Alpes'),
+(27, '18 Rue de la Victoire', '44000', 'Nantes', 'Pays de la Loire'),
+(28, '12 Rue de la Mairie', '34000', 'Montpellier', 'Occitanie'),
+(29, '3 Rue de la Paix', '31000', 'Toulouse', 'Occitanie'),
+(30, '7 Rue du Théâtre', '59000', 'Lille', 'Hauts-de-France'),
+(31, '11 Rue Nationale', '37000', 'Tours', 'Centre-Val de Loire'),
+(32, '5 Rue Saint-Jacques', '33000', 'Bordeaux', 'Nouvelle-Aquitaine'),
+(33, '26 Rue Sainte-Catherine', '69002', 'Lyon', 'Auvergne-Rhône-Alpes'),
+(34, '10 Rue du Marché', '44000', 'Nantes', 'Pays de la Loire'),
+(35, '14 Rue de la Loge', '34000', 'Montpellier', 'Occitanie'),
+(36, '8 Rue de la Concorde', '31000', 'Toulouse', 'Occitanie'),
+(37, '12 Rue de la Clef', '59000', 'Lille', 'Hauts-de-France'),
+(38, '2 Rue Nationale', '37000', 'Tours', 'Centre-Val de Loire'),
+(39, '7 Rue du Palais', '33000', 'Bordeaux', 'Nouvelle-Aquitaine'),
+(40, '9 Rue de la République', '69001', 'Lyon', 'Auvergne-Rhône-Alpes');
+
+# TEMPORALITE 
+
+INSERT INTO mockdw.temporalite (id, temporalite) VALUES 
+(1, '2022-01-01'),
+(2, '2022-01-02'),
+(3, '2022-01-03'),
+(4, '2022-01-04'),
+(5, '2022-01-05'),
+(6, '2022-01-06'),
+(7, '2022-01-07'),
+(8, '2022-01-08'),
+(9, '2022-01-09'),
+(10, '2022-01-10'),
+(11, '2022-01-11'),
+(12, '2022-01-12'),
+(13, '2022-01-13'),
+(14, '2022-01-14'),
+(15, '2022-01-15'),
+(16, '2022-01-16'),
+(17, '2022-01-17'),
+(18, '2022-01-18'),
+(19, '2022-01-19'),
+(20, '2022-01-20');
+
+INSERT INTO mockdw.temporalite (id, temporalite) VALUES 
+(21, '2022-02-14'),
+(22, '2022-02-28'),
+(23, '2022-03-05'),
+(24, '2022-03-11'),
+(25, '2022-03-18'),
+(26, '2022-04-01'),
+(27, '2022-04-15'),
+(28, '2022-05-01'),
+(29, '2022-05-15'),
+(30, '2022-06-01'),
+(31, '2022-06-15'),
+(32, '2022-07-01'),
+(33, '2022-07-15'),
+(34, '2022-08-01'),
+(35, '2022-08-15'),
+(36, '2022-09-01'),
+(37, '2022-09-15'),
+(38, '2022-10-01'),
+(39, '2022-10-15'),
+(40, '2022-11-01');
+
+# UTILISATEURS
+
+INSERT INTO mockdw.utilisateurs (id, nickname, datecreation, nbamis, etoilesmoyennes, nbcompliments, nbfollowers, nbreactions, nbanneeelite) VALUES 
+(1, 'Alice', '2019-01-01', 27, 3.8, 125, 78, 430, 1),
+(2, 'Bob', '2019-02-15', 13, 4.2, 65, 45, 217, 0),
+(3, 'Charlie', '2019-03-08', 35, 4.1, 142, 92, 568, 2),
+(4, 'David', '2019-04-22', 8, 3.6, 42, 31, 132, 0),
+(5, 'Emma', '2019-05-11', 50, 4.5, 230, 112, 824, 3),
+(6, 'Frank', '2019-06-03', 22, 3.9, 87, 54, 336, 1),
+(7, 'Grace', '2019-07-19', 12, 4.3, 56, 41, 204, 0),
+(8, 'Harry', '2019-08-28', 17, 4.0, 73, 63, 291, 1),
+(9, 'Isabella', '2019-09-12', 41, 4.7, 182, 98, 682, 2),
+(10, 'Jack', '2019-10-05', 19, 4.2, 80, 59, 367, 0),
+(11, 'Kate', '2019-11-11', 28, 3.7, 105, 76, 431, 1),
+(12, 'Lucas', '2019-12-29', 14, 4.1, 66, 44, 223, 0),
+(13, 'Mia', '2020-01-17', 36, 4.4, 157, 85, 615, 2),
+(14, 'Nathan', '2020-02-22', 11, 3.5, 38, 29, 115, 0),
+(15, 'Olivia', '2020-03-15', 47, 4.6, 212, 105, 780, 3),
+(16, 'Peter', '2020-04-01', 21, 3.8, 90, 51, 312, 1),
+(17, 'Quinn', '2020-05-21', 10, 4.2, 53, 38, 193, 0),
+(18, 'Ryan', '2020-06-11', 16, 4.0, 70, 60, 268, 1),
+(19, 'Samantha', '2020-07-04', 39, 4.8, 192, 97, 734, 2),
+(20, 'Thomas', '2020-08-14', 18, 4.3, 85, 57, 350, 0);
+
+# ATTRIBUTSCOMMERCE
+
+INSERT INTO mockdw.attributscommerces (id, acceptsinsurance, agesallowed, alcohol, ambience, byob, byobcorkage, bestnights, bikeparking, businessacceptsbitcoin, businessacceptscreditcards, businessparking, byappointmentonly, caters, coatcheck, corkage, dietaryrestrictions, dogsallowed, drivethru, goodfordancing, goodforkids, goodformeal, hairspecializesin, happyhour, hastv, music, noiselevel, open24hours, outdoorseating, restaurantsattire, restaurantscounterservice, restaurantsdelivery, restaurantsgoodforgroups, restaurantspricerange2, restaurantsreservations, restaurantstableservice, restaurantstakeout, smoking, wheelchairaccessible, wifi)
+VALUES 
+  (8, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false),
+  (9, false, true, true, false, true, true, false, true, false, true, false, true, false, true, false, true, false, true, true, false, true, true, false, true, true, false, false, true, true, false, false, true, true, false, false, true, false, true, false, true),
+  (10, true, true, false, true, false, false, true, false, false, true, true, false, true, false, true, false, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, true, false, false, true, true, false, false, true),
+  (11, false, true, true, true, true, false, false, true, false, false, true, false, false, true, true, false, true, false, true, true, false, true, true, false, true, false, true, true, false, true, false, true, false, true, true, false, false, true, true, false),
+  (12, true, false, false, false, false, true, true, true, false, true, false, true, false, true, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true);
+
+# CHECKINS
+
+INSERT INTO mockdw.checkins (id, idcommerce, iddate) VALUES 
+(1, 8, 1),
+(2, 11, 1),
+(3, 12, 2),
+(4, 9, 2),
+(5, 10, 3),
+(6, 12, 3),
+(7, 9, 4),
+(8, 11, 4),
+(9, 8, 5),
+(10, 12, 5),
+(11, 9, 6),
+(12, 11, 6),
+(13, 8, 7),
+(14, 12, 7),
+(15, 10, 8),
+(16, 11, 8),
+(17, 9, 9),
+(18, 8, 9),
+(19, 12, 10),
+(20, 10, 10);
+
+# AVIS
+
+INSERT INTO mockdw.avis (id, idutilisateur, idcommerce, iddate, note) VALUES
+(1, 1, 8, 1, 4.5),
+(2, 2, 10, 3, 3.2),
+(3, 1, 11, 4, 4.0),
+(4, 4, 9, 5, 2.5),
+(5, 3, 10, 6, 3.8),
+(6, 5, 9, 7, 2.0),
+(7, 2, 12, 2, 3.5),
+(8, 6, 8, 3, 4.8),
+(9, 1, 12, 1, 4.2),
+(10, 4, 10, 4, 2.7),
+(11, 5, 11, 6, 3.9),
+(12, 2, 9, 2, 3.0),
+(13, 3, 8, 3, 3.7),
+(14, 6, 11, 7, 4.5),
+(15, 4, 9, 5, 2.3),
+(16, 1, 10, 2, 4.0),
+(17, 5, 8, 4, 4.1),
+(18, 3, 12, 6, 3.6),
+(19, 2, 9, 1, 2.8),
+(20, 4, 11, 5, 4.2);
